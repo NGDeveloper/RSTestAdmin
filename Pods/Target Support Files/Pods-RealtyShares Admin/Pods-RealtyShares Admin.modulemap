@@ -1,0 +1,6 @@
+framework module Pods_RealtyShares_Admin {
+  umbrella header "Pods-RealtyShares Admin-umbrella.h"
+
+  export *
+  module * { export * }
+}

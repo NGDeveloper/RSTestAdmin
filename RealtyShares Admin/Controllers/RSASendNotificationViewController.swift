@@ -121,7 +121,8 @@ class RSASendNotificationViewController: UIViewController, UITextFieldDelegate {
             "included_segments" : [self.segmentTextField.text!],
             "data" : ["URL" : self.urlTextField.text!],
             "contents" : ["en" : self.messageTextField.text!],
-            "headings" : ["en" : self.titleTextField.text!]]
+            "headings" : ["en" : self.titleTextField.text!],
+            "content_available" : true]
         
         
         let headers = ["Authorization" : "Basic NDQyNmJkZGUtMTk5Ny00NGZkLWFlZWItYzJhYmI4MjVlOTIw"]

@@ -358,7 +358,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.realtyshares.admin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ff61fde3-79ef-40cd-8986-50e41d048348";
+				PROVISIONING_PROFILE = "1705ba5b-3b81-4a88-8e4b-f7602a8300f1";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/RealtyShares Admin/Supporting Files/RSABridgingHeader.h";
 			};
 			name = Debug;
@@ -375,7 +375,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.realtyshares.admin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ff61fde3-79ef-40cd-8986-50e41d048348";
+				PROVISIONING_PROFILE = "1705ba5b-3b81-4a88-8e4b-f7602a8300f1";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/RealtyShares Admin/Supporting Files/RSABridgingHeader.h";
 			};
 			name = Release;

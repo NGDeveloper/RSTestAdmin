@@ -12,8 +12,14 @@
 		380E56941C5AA3F0003DF75E /* RSAMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380E56921C5AA3F0003DF75E /* RSAMain.storyboard */; };
 		380E56961C5AA3F0003DF75E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380E56951C5AA3F0003DF75E /* Images.xcassets */; };
 		387244911C5FA25E008C7DF3 /* RSAMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872448D1C5FA25E008C7DF3 /* RSAMainViewController.swift */; };
-		387244921C5FA25E008C7DF3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3872448F1C5FA25E008C7DF3 /* Info.plist */; };
 		387244941C5FA314008C7DF3 /* RSASendNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387244931C5FA314008C7DF3 /* RSASendNotificationViewController.swift */; };
+		38C3F5491C90AB770074CF11 /* RSAPropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F5481C90AB770074CF11 /* RSAPropertiesViewController.swift */; };
+		38C3F54B1C90AB970074CF11 /* RSAPropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F54A1C90AB970074CF11 /* RSAPropertyTableViewCell.swift */; };
+		38C3F54E1C90B2180074CF11 /* RSAAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F54D1C90B2180074CF11 /* RSAAPI.swift */; };
+		38C3F5521C9201370074CF11 /* RSADB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F5501C9201370074CF11 /* RSADB.xcdatamodeld */; };
+		38C3F5551C9201AB0074CF11 /* Property+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F5531C9201AB0074CF11 /* Property+CoreDataProperties.swift */; };
+		38C3F5561C9201AB0074CF11 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F5541C9201AB0074CF11 /* Property.swift */; };
+		38C3F5581C92025D0074CF11 /* RSACoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F5571C92025D0074CF11 /* RSACoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +31,13 @@
 		3872448F1C5FA25E008C7DF3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		387244901C5FA25E008C7DF3 /* RSABridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSABridgingHeader.h; sourceTree = "<group>"; };
 		387244931C5FA314008C7DF3 /* RSASendNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSASendNotificationViewController.swift; sourceTree = "<group>"; };
+		38C3F5481C90AB770074CF11 /* RSAPropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAPropertiesViewController.swift; sourceTree = "<group>"; };
+		38C3F54A1C90AB970074CF11 /* RSAPropertyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAPropertyTableViewCell.swift; sourceTree = "<group>"; };
+		38C3F54D1C90B2180074CF11 /* RSAAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAAPI.swift; sourceTree = "<group>"; };
+		38C3F5511C9201370074CF11 /* RSADB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RSADB.xcdatamodel; sourceTree = "<group>"; };
+		38C3F5531C9201AB0074CF11 /* Property+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Property+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		38C3F5541C9201AB0074CF11 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		38C3F5571C92025D0074CF11 /* RSACoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSACoreDataStack.swift; sourceTree = "<group>"; };
 		4C6EB091B28ABBFE695630CD /* Pods-RealtyShares Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtyShares Admin.release.xcconfig"; path = "Pods/Target Support Files/Pods-RealtyShares Admin/Pods-RealtyShares Admin.release.xcconfig"; sourceTree = "<group>"; };
 		95206FDD1D23BA6AD5E3AD64 /* Pods_RealtyShares_Admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealtyShares_Admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B977130AB826F5B2B4E0FAF3 /* Pods-RealtyShares Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtyShares Admin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealtyShares Admin/Pods-RealtyShares Admin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +80,8 @@
 				380E56951C5AA3F0003DF75E /* Images.xcassets */,
 				380E568E1C5AA3F0003DF75E /* RSAAppDelegate.swift */,
 				3872448C1C5FA25E008C7DF3 /* Controllers */,
+				38C3F54C1C90B1DC0074CF11 /* Managers */,
+				38C3F54F1C9200BC0074CF11 /* Model */,
 				3872448E1C5FA25E008C7DF3 /* Supporting Files */,
 			);
 			path = "RealtyShares Admin";
@@ -75,6 +90,7 @@
 		3872448C1C5FA25E008C7DF3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				38C3F5471C90AB770074CF11 /* Properties */,
 				3872448D1C5FA25E008C7DF3 /* RSAMainViewController.swift */,
 				387244931C5FA314008C7DF3 /* RSASendNotificationViewController.swift */,
 			);
@@ -88,6 +104,34 @@
 				387244901C5FA25E008C7DF3 /* RSABridgingHeader.h */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		38C3F5471C90AB770074CF11 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				38C3F5481C90AB770074CF11 /* RSAPropertiesViewController.swift */,
+				38C3F54A1C90AB970074CF11 /* RSAPropertyTableViewCell.swift */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		38C3F54C1C90B1DC0074CF11 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				38C3F54D1C90B2180074CF11 /* RSAAPI.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		38C3F54F1C9200BC0074CF11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				38C3F5501C9201370074CF11 /* RSADB.xcdatamodeld */,
+				38C3F5571C92025D0074CF11 /* RSACoreDataStack.swift */,
+				38C3F5531C9201AB0074CF11 /* Property+CoreDataProperties.swift */,
+				38C3F5541C9201AB0074CF11 /* Property.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4011724AA7692571E236B16D /* Frameworks */ = {
@@ -170,7 +214,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				387244921C5FA25E008C7DF3 /* Info.plist in Resources */,
 				380E56961C5AA3F0003DF75E /* Images.xcassets in Resources */,
 				380E56941C5AA3F0003DF75E /* RSAMain.storyboard in Resources */,
 			);
@@ -245,9 +288,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C3F5561C9201AB0074CF11 /* Property.swift in Sources */,
 				387244941C5FA314008C7DF3 /* RSASendNotificationViewController.swift in Sources */,
+				38C3F54B1C90AB970074CF11 /* RSAPropertyTableViewCell.swift in Sources */,
 				387244911C5FA25E008C7DF3 /* RSAMainViewController.swift in Sources */,
+				38C3F5491C90AB770074CF11 /* RSAPropertiesViewController.swift in Sources */,
+				38C3F5551C9201AB0074CF11 /* Property+CoreDataProperties.swift in Sources */,
+				38C3F5581C92025D0074CF11 /* RSACoreDataStack.swift in Sources */,
 				380E568F1C5AA3F0003DF75E /* RSAAppDelegate.swift in Sources */,
+				38C3F54E1C90B2180074CF11 /* RSAAPI.swift in Sources */,
+				38C3F5521C9201370074CF11 /* RSADB.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +403,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = "$(SRCROOT)/RealtyShares Admin/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -402,6 +453,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		38C3F5501C9201370074CF11 /* RSADB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				38C3F5511C9201370074CF11 /* RSADB.xcdatamodel */,
+			);
+			currentVersion = 38C3F5511C9201370074CF11 /* RSADB.xcdatamodel */;
+			path = RSADB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 380E56831C5AA3F0003DF75E /* Project object */;
 }

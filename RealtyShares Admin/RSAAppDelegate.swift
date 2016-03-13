@@ -14,11 +14,16 @@ import Crashlytics
 class RSAAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    lazy var  coreDataStack = CoreDataStack()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics.self])
         UINavigationBar.appearance().tintColor = UIColor(red: 57.0/255.0, green: 181.0/255.0, blue: 74.0/255.0, alpha: 1.0)
+        
+        let navigationController = window!.rootViewController as! UINavigationController
+        let viewController = navigationController.topViewController as! RSAMainViewController
+        viewController.coreDataStack = coreDataStack
+        
         return true
     }
 
@@ -42,6 +47,7 @@ class RSAAppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+//        coreDataStack.saveContext()
     }
 
 

@@ -9,8 +9,14 @@
 import UIKit
 import Alamofire
 
+enum TableViewSection : Int {
+    case Properties = 0
+    case Notifications = 1
+}
+
 class RSAMainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
+    var coreDataStack: CoreDataStack!
     
     // MARK: - Life Cycle
     
@@ -21,29 +27,60 @@ class RSAMainViewController: UIViewController, UITableViewDataSource, UITableVie
     // MARK: - UITableViewDataSource & Delegate
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        let section = TableViewSection(rawValue: section)!
+        switch section {
+        case .Properties:
+            return 1
+        case .Notifications:
+            return 1
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("RSABasicTableViewCell")
-        cell?.textLabel?.text = "Send notification"
+        let section = TableViewSection(rawValue: indexPath.section)!
+        switch section {
+        case .Properties:
+            cell?.textLabel?.text = "Properties list"
+            break
+        case .Notifications:
+            cell?.textLabel?.text = "Send notification"
+            break
+        }
         cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         return cell!
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Notifications"
+        let section = TableViewSection(rawValue: section)!
+        switch section {
+        case .Properties:
+            return "Properties"
+        case .Notifications:
+            return "Notifications"
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(String(RSASendNotificationViewController.self)) {
-            self.navigationController?.pushViewController(viewController, animated: true)
+        let section = TableViewSection(rawValue: indexPath.section)!
+        switch section {
+        case .Properties:
+            if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(String(RSAPropertiesViewController.self)) as! RSAPropertiesViewController? {
+                viewController.coreDataStack = coreDataStack
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+            break
+        case .Notifications:
+            if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(String(RSASendNotificationViewController.self)) {
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+            break
         }
     }
 }

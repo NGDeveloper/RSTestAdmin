@@ -11,15 +11,26 @@ import CoreData
 
 class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
+    var refreshControl: UIRefreshControl!
     var properties: [Property]! = []
     var coreDataStack: CoreDataStack!
     let fetchRequest = NSFetchRequest(entityName: "Property")
+    let sortDescriptor = NSSortDescriptor(key: "created", ascending: false)
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Add pull-to-refresh control to the table view.
+        let tableViewController = UITableViewController()
+        tableViewController.tableView = tableView
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: Selector("refreshPropertiesList"), forControlEvents: UIControlEvents.ValueChanged)
+        tableViewController.refreshControl = refreshControl
+        
+        // Configure fetch request.
+        fetchRequest.sortDescriptors = [sortDescriptor]
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -29,6 +40,10 @@ class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        // Refresh properties list with refreshing animation.
+        refreshControl.beginRefreshing()
+        tableView.setContentOffset(CGPointMake(0, -refreshControl.frame.size.height), animated: true)
         refreshPropertiesList()
     }
     
@@ -36,8 +51,9 @@ class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: Public
     // MARK: Private
     
-    private func refreshPropertiesList() {
+    func refreshPropertiesList() {
         RSAAPI.sharedAPI.getPropertiesListWithCompletion { (properties) -> Void in
+            self.refreshControl.endRefreshing()
             if (properties != nil) {
                 var savedPropertiesCount = 0
                 
@@ -67,6 +83,9 @@ class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITa
                             if let url = propertyDictionary["url"] as? String {
                                 property.url = url
                             }
+                            if let created = propertyDictionary["created"] as? NSNumber {
+                                property.created = created
+                            }
                             savedPropertiesCount++
                         } catch let error as NSError {
                             print("Could not fetch \(error), \(error.userInfo)")
@@ -88,7 +107,7 @@ class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITa
             properties = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Property]
             tableView.reloadData()
         } catch let error as NSError {
-            print("Colud not fetch \(error), \(error.userInfo)")
+            print("Could not fetch \(error), \(error.userInfo)")
         }
     }
     
@@ -118,6 +137,8 @@ class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: - Actions
     
     @IBAction func addPropertyButtonPressed(sender: UIBarButtonItem) {
-        refreshPropertiesList()
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(String(RSAAddPropertyViewController.self))
+        let navigationController = UINavigationController(rootViewController: viewController!)
+        self.navigationController?.presentViewController(navigationController, animated: true, completion: nil)
     }
 }

@@ -20,6 +20,7 @@
 		38C3F5551C9201AB0074CF11 /* Property+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F5531C9201AB0074CF11 /* Property+CoreDataProperties.swift */; };
 		38C3F5561C9201AB0074CF11 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F5541C9201AB0074CF11 /* Property.swift */; };
 		38C3F5581C92025D0074CF11 /* RSACoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F5571C92025D0074CF11 /* RSACoreDataStack.swift */; };
+		38C3F55A1C9842920074CF11 /* RSAAddPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F5591C9842920074CF11 /* RSAAddPropertyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		38C3F5531C9201AB0074CF11 /* Property+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Property+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		38C3F5541C9201AB0074CF11 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		38C3F5571C92025D0074CF11 /* RSACoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSACoreDataStack.swift; sourceTree = "<group>"; };
+		38C3F5591C9842920074CF11 /* RSAAddPropertyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAAddPropertyViewController.swift; sourceTree = "<group>"; };
+		38C626021C9A1F670089BFF9 /* RSADB v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RSADB v2.xcdatamodel"; sourceTree = "<group>"; };
 		4C6EB091B28ABBFE695630CD /* Pods-RealtyShares Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtyShares Admin.release.xcconfig"; path = "Pods/Target Support Files/Pods-RealtyShares Admin/Pods-RealtyShares Admin.release.xcconfig"; sourceTree = "<group>"; };
 		95206FDD1D23BA6AD5E3AD64 /* Pods_RealtyShares_Admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealtyShares_Admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B977130AB826F5B2B4E0FAF3 /* Pods-RealtyShares Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtyShares Admin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealtyShares Admin/Pods-RealtyShares Admin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 			children = (
 				38C3F5481C90AB770074CF11 /* RSAPropertiesViewController.swift */,
 				38C3F54A1C90AB970074CF11 /* RSAPropertyTableViewCell.swift */,
+				38C3F5591C9842920074CF11 /* RSAAddPropertyViewController.swift */,
 			);
 			path = Properties;
 			sourceTree = "<group>";
@@ -298,6 +302,7 @@
 				380E568F1C5AA3F0003DF75E /* RSAAppDelegate.swift in Sources */,
 				38C3F54E1C90B2180074CF11 /* RSAAPI.swift in Sources */,
 				38C3F5521C9201370074CF11 /* RSADB.xcdatamodeld in Sources */,
+				38C3F55A1C9842920074CF11 /* RSAAddPropertyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,9 +463,10 @@
 		38C3F5501C9201370074CF11 /* RSADB.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				38C626021C9A1F670089BFF9 /* RSADB v2.xcdatamodel */,
 				38C3F5511C9201370074CF11 /* RSADB.xcdatamodel */,
 			);
-			currentVersion = 38C3F5511C9201370074CF11 /* RSADB.xcdatamodel */;
+			currentVersion = 38C626021C9A1F670089BFF9 /* RSADB v2.xcdatamodel */;
 			path = RSADB.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

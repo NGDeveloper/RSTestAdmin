@@ -53,9 +53,6 @@ class RSASendNotificationViewController: UIViewController, UITextFieldDelegate {
     
     private func registerForKeyboardNotifications() {
         let center = NSNotificationCenter.defaultCenter()
-//        center.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-//        center.addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        
         center.addObserverForName(UIKeyboardWillShowNotification, object: nil, queue: nil) { (notification) -> Void in
             if let userInfo = notification.userInfo {
                 if let keyboardSizeEnd = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() {
@@ -82,16 +79,6 @@ class RSASendNotificationViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Self Methods
     // MARK: Public
     // MARK: Private
-    
-    // MARK: - UIKeyboardNotifications
-    
-    private func keyboardWillShow(notification: NSNotification) {
-
-    }
-    
-    private func keyboardWillHide(notification: NSNotification) {
-        
-    }
     
     // MARK: - Actions
     
@@ -123,7 +110,6 @@ class RSASendNotificationViewController: UIViewController, UITextFieldDelegate {
             "contents" : ["en" : self.messageTextField.text!],
             "headings" : ["en" : self.titleTextField.text!],
             "content_available" : true]
-        
         
         let headers = ["Authorization" : "Basic NDQyNmJkZGUtMTk5Ny00NGZkLWFlZWItYzJhYmI4MjVlOTIw"]
         

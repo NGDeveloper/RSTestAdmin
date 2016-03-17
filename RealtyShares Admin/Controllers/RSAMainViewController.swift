@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 enum TableViewSection : Int {
     case Properties = 0
@@ -22,6 +23,22 @@ class RSAMainViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Clear database from old objects.
+        let fetchRequest = NSFetchRequest(entityName: "Property")
+        let predicate = NSPredicate(format: "created == nil")
+        fetchRequest.predicate = predicate
+        
+        do {
+            let results = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Property]
+            for property in results {
+                coreDataStack.context.deleteObject(property)
+                print("Deleted property: \(property)")
+            }
+            try coreDataStack.context.save()
+        } catch let error as NSError {
+            print("Could not clear database from old objects. Error: \(error.localizedDescription)")
+        }
     }
     
     // MARK: - UITableViewDataSource & Delegate

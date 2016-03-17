@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "37EA54FEAAA8DCA1E3A07D23"
+               BlueprintIdentifier = "5D06CC66250953D85540E3BE"
                BuildableName = "Pods_RealtyShares_Admin.framework"
                BlueprintName = "Pods-RealtyShares Admin"
                ReferencedContainer = "container:Pods.xcodeproj">

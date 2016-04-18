@@ -48,7 +48,7 @@ class CoreDataStack {
             do {
                 try context.save()
             } catch let error as NSError {
-                print("Error: \(error.localizedDescription)")
+                print("Failure to save context: \(error.localizedDescription)")
                 abort()
             }
         }

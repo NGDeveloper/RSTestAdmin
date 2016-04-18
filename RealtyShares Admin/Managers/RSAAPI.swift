@@ -11,9 +11,11 @@ import Alamofire
 
 class RSAAPI: NSObject {
     static let sharedAPI = RSAAPI()
+    let kBaseURL = "https://ethereal-zodiac-121821.appspot.com/";
+//    let kBaseURL = "http://localhost:8888/";
     
     func getPropertiesListWithCompletion(completion: (properties: Array<AnyObject>?) -> Void) {
-        Alamofire.request(.GET, "https://ethereal-zodiac-121821.appspot.com/properties")
+        Alamofire.request(.GET, kBaseURL + "properties")
         .responseJSON { (response) -> Void in
 //            print(response.request)  // original URL request
 //            print(response.response) // URL response
@@ -36,7 +38,7 @@ class RSAAPI: NSObject {
     func createPropertyWithTitle(title: String, message: String, url: String, completion: ((error: NSError?) -> Void)?) {
         let params = ["title": title, "message" : message, "url" : url]
         
-        Alamofire.request(.POST, "https://ethereal-zodiac-121821.appspot.com/realtysharestestserver", parameters: params, encoding: ParameterEncoding.URL, headers: nil)
+        Alamofire.request(.POST, kBaseURL + "properties", parameters: params, encoding: ParameterEncoding.URL, headers: nil)
         .responseString { (response) -> Void in
             print("\(response)")
             // TODO: Handle server response errors.

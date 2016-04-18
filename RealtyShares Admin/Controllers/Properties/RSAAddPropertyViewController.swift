@@ -32,6 +32,11 @@ class RSAAddPropertyViewController: UIViewController, UITextFieldDelegate {
         cancelButton.layer.cornerRadius = 3.0
         cancelButton.clipsToBounds = true
         
+        // Fill text fields with sample text.
+//        self.titleTextField.text = "RealtyShares"
+//        self.messageTextField.text = "Message from server"
+//        self.urlTextField.text = "http://realtyshares.com"
+        
         activityIndicatorView.stopAnimating()
     }
     

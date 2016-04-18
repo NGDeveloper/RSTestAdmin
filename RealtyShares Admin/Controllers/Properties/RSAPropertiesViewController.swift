@@ -26,7 +26,7 @@ class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITa
         let tableViewController = UITableViewController()
         tableViewController.tableView = tableView
         refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: Selector("refreshPropertiesList"), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: #selector(self.refreshPropertiesList), forControlEvents: UIControlEvents.ValueChanged)
         tableViewController.refreshControl = refreshControl
         
         // Configure fetch request.
@@ -86,7 +86,7 @@ class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITa
                             if let created = propertyDictionary["created"] as? NSNumber {
                                 property.created = created
                             }
-                            savedPropertiesCount++
+                            savedPropertiesCount = savedPropertiesCount + 1;
                         } catch let error as NSError {
                             print("Could not fetch \(error), \(error.userInfo)")
                         }

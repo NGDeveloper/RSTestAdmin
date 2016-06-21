@@ -12,7 +12,6 @@ import CoreData
 
 enum TableViewSection : Int {
     case Properties = 0
-    case Notifications = 1
 }
 
 class RSAMainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -44,15 +43,13 @@ class RSAMainViewController: UIViewController, UITableViewDataSource, UITableVie
     // MARK: - UITableViewDataSource & Delegate
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section = TableViewSection(rawValue: section)!
         switch section {
         case .Properties:
-            return 1
-        case .Notifications:
             return 1
         }
     }
@@ -64,9 +61,6 @@ class RSAMainViewController: UIViewController, UITableViewDataSource, UITableVie
         case .Properties:
             cell?.textLabel?.text = "Properties list"
             break
-        case .Notifications:
-            cell?.textLabel?.text = "Send notification"
-            break
         }
         cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         return cell!
@@ -77,8 +71,6 @@ class RSAMainViewController: UIViewController, UITableViewDataSource, UITableVie
         switch section {
         case .Properties:
             return "Properties"
-        case .Notifications:
-            return "Notifications"
         }
     }
     
@@ -90,11 +82,6 @@ class RSAMainViewController: UIViewController, UITableViewDataSource, UITableVie
         case .Properties:
             if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(String(RSAPropertiesViewController.self)) as! RSAPropertiesViewController? {
                 viewController.coreDataStack = coreDataStack
-                self.navigationController?.pushViewController(viewController, animated: true)
-            }
-            break
-        case .Notifications:
-            if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(String(RSASendNotificationViewController.self)) {
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
             break

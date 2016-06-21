@@ -12,7 +12,6 @@
 		380E56941C5AA3F0003DF75E /* RSAMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380E56921C5AA3F0003DF75E /* RSAMain.storyboard */; };
 		380E56961C5AA3F0003DF75E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380E56951C5AA3F0003DF75E /* Images.xcassets */; };
 		387244911C5FA25E008C7DF3 /* RSAMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872448D1C5FA25E008C7DF3 /* RSAMainViewController.swift */; };
-		387244941C5FA314008C7DF3 /* RSASendNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387244931C5FA314008C7DF3 /* RSASendNotificationViewController.swift */; };
 		38C3F5491C90AB770074CF11 /* RSAPropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F5481C90AB770074CF11 /* RSAPropertiesViewController.swift */; };
 		38C3F54B1C90AB970074CF11 /* RSAPropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F54A1C90AB970074CF11 /* RSAPropertyTableViewCell.swift */; };
 		38C3F54E1C90B2180074CF11 /* RSAAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F54D1C90B2180074CF11 /* RSAAPI.swift */; };
@@ -31,7 +30,6 @@
 		3872448D1C5FA25E008C7DF3 /* RSAMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAMainViewController.swift; sourceTree = "<group>"; };
 		3872448F1C5FA25E008C7DF3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		387244901C5FA25E008C7DF3 /* RSABridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSABridgingHeader.h; sourceTree = "<group>"; };
-		387244931C5FA314008C7DF3 /* RSASendNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSASendNotificationViewController.swift; sourceTree = "<group>"; };
 		38C3F5481C90AB770074CF11 /* RSAPropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAPropertiesViewController.swift; sourceTree = "<group>"; };
 		38C3F54A1C90AB970074CF11 /* RSAPropertyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAPropertyTableViewCell.swift; sourceTree = "<group>"; };
 		38C3F54D1C90B2180074CF11 /* RSAAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAAPI.swift; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 			children = (
 				38C3F5471C90AB770074CF11 /* Properties */,
 				3872448D1C5FA25E008C7DF3 /* RSAMainViewController.swift */,
-				387244931C5FA314008C7DF3 /* RSASendNotificationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -293,7 +290,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				38C3F5561C9201AB0074CF11 /* Property.swift in Sources */,
-				387244941C5FA314008C7DF3 /* RSASendNotificationViewController.swift in Sources */,
 				38C3F54B1C90AB970074CF11 /* RSAPropertyTableViewCell.swift in Sources */,
 				387244911C5FA25E008C7DF3 /* RSAMainViewController.swift in Sources */,
 				38C3F5491C90AB770074CF11 /* RSAPropertiesViewController.swift in Sources */,

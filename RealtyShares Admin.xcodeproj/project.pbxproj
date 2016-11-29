@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E7FEDF8F40888A650F21AE1 /* Pods_RealtyShares_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95206FDD1D23BA6AD5E3AD64 /* Pods_RealtyShares_Admin.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		380E568F1C5AA3F0003DF75E /* RSAAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380E568E1C5AA3F0003DF75E /* RSAAppDelegate.swift */; };
 		380E56941C5AA3F0003DF75E /* RSAMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380E56921C5AA3F0003DF75E /* RSAMain.storyboard */; };
 		380E56961C5AA3F0003DF75E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380E56951C5AA3F0003DF75E /* Images.xcassets */; };
@@ -20,9 +19,11 @@
 		38C3F5561C9201AB0074CF11 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F5541C9201AB0074CF11 /* Property.swift */; };
 		38C3F5581C92025D0074CF11 /* RSACoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F5571C92025D0074CF11 /* RSACoreDataStack.swift */; };
 		38C3F55A1C9842920074CF11 /* RSAAddPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C3F5591C9842920074CF11 /* RSAAddPropertyViewController.swift */; };
+		C0544519BE2F34173BEB8230 /* Pods_RealtyShares_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6029B3F0068A27EAFEEEC0CF /* Pods_RealtyShares_Admin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C22E0B49E3E1EC391502D62 /* Pods-RealtyShares Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtyShares Admin.release.xcconfig"; path = "Pods/Target Support Files/Pods-RealtyShares Admin/Pods-RealtyShares Admin.release.xcconfig"; sourceTree = "<group>"; };
 		380E568B1C5AA3F0003DF75E /* RealtyShares Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RealtyShares Admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		380E568E1C5AA3F0003DF75E /* RSAAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAAppDelegate.swift; sourceTree = "<group>"; };
 		380E56931C5AA3F0003DF75E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RSAMain.storyboard; sourceTree = "<group>"; };
@@ -39,9 +40,8 @@
 		38C3F5571C92025D0074CF11 /* RSACoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSACoreDataStack.swift; sourceTree = "<group>"; };
 		38C3F5591C9842920074CF11 /* RSAAddPropertyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAAddPropertyViewController.swift; sourceTree = "<group>"; };
 		38C626021C9A1F670089BFF9 /* RSADB v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RSADB v2.xcdatamodel"; sourceTree = "<group>"; };
-		4C6EB091B28ABBFE695630CD /* Pods-RealtyShares Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtyShares Admin.release.xcconfig"; path = "Pods/Target Support Files/Pods-RealtyShares Admin/Pods-RealtyShares Admin.release.xcconfig"; sourceTree = "<group>"; };
-		95206FDD1D23BA6AD5E3AD64 /* Pods_RealtyShares_Admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealtyShares_Admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B977130AB826F5B2B4E0FAF3 /* Pods-RealtyShares Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtyShares Admin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealtyShares Admin/Pods-RealtyShares Admin.debug.xcconfig"; sourceTree = "<group>"; };
+		6029B3F0068A27EAFEEEC0CF /* Pods_RealtyShares_Admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealtyShares_Admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C82C8AA2A3F3E69C443FFF82 /* Pods-RealtyShares Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtyShares Admin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealtyShares Admin/Pods-RealtyShares Admin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E7FEDF8F40888A650F21AE1 /* Pods_RealtyShares_Admin.framework in Frameworks */,
+				C0544519BE2F34173BEB8230 /* Pods_RealtyShares_Admin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,8 +61,8 @@
 			children = (
 				380E568D1C5AA3F0003DF75E /* RealtyShares Admin */,
 				380E568C1C5AA3F0003DF75E /* Products */,
-				A8B5790C14CC8BC736160E46 /* Pods */,
-				4011724AA7692571E236B16D /* Frameworks */,
+				A1AAFBA671D52AAAD5F487EB /* Pods */,
+				66A45C12DDC63A2F73AACA1B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,19 +135,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		4011724AA7692571E236B16D /* Frameworks */ = {
+		66A45C12DDC63A2F73AACA1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				95206FDD1D23BA6AD5E3AD64 /* Pods_RealtyShares_Admin.framework */,
+				6029B3F0068A27EAFEEEC0CF /* Pods_RealtyShares_Admin.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A8B5790C14CC8BC736160E46 /* Pods */ = {
+		A1AAFBA671D52AAAD5F487EB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B977130AB826F5B2B4E0FAF3 /* Pods-RealtyShares Admin.debug.xcconfig */,
-				4C6EB091B28ABBFE695630CD /* Pods-RealtyShares Admin.release.xcconfig */,
+				C82C8AA2A3F3E69C443FFF82 /* Pods-RealtyShares Admin.debug.xcconfig */,
+				0C22E0B49E3E1EC391502D62 /* Pods-RealtyShares Admin.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -159,13 +159,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 380E569D1C5AA3F0003DF75E /* Build configuration list for PBXNativeTarget "RealtyShares Admin" */;
 			buildPhases = (
-				B6293867E12258C6B3545D7B /* Check Pods Manifest.lock */,
+				4286A7B272FC0B5CB2D74ECB /* [CP] Check Pods Manifest.lock */,
 				380E56871C5AA3F0003DF75E /* Sources */,
 				380E56881C5AA3F0003DF75E /* Frameworks */,
 				380E56891C5AA3F0003DF75E /* Resources */,
-				6525631869D737CF2789E6E0 /* Copy Pods Resources */,
-				975D04916F6E4086C53B0E4D /* Embed Pods Frameworks */,
 				382B7DD61C5FFA9000403B54 /* Run Fabric */,
+				9BFA3241D3192BA175ECDA82 /* [CP] Embed Pods Frameworks */,
+				0568E8C954349CEE0D9E7544 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,12 +183,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = RealtyShares;
 				TargetAttributes = {
 					380E568A1C5AA3F0003DF75E = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 8JM7ZLT3M7;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -223,6 +224,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0568E8C954349CEE0D9E7544 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RealtyShares Admin/Pods-RealtyShares Admin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		382B7DD61C5FFA9000403B54 /* Run Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,49 +253,34 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" c65537f8c688b08a1f57c27e6f19219209dbf703 a719d93e1400179b90385b760809958a58f56aa6afc0ef3a908363155763ce6a";
 		};
-		6525631869D737CF2789E6E0 /* Copy Pods Resources */ = {
+		4286A7B272FC0B5CB2D74ECB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RealtyShares Admin/Pods-RealtyShares Admin-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		975D04916F6E4086C53B0E4D /* Embed Pods Frameworks */ = {
+		9BFA3241D3192BA175ECDA82 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RealtyShares Admin/Pods-RealtyShares Admin-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B6293867E12258C6B3545D7B /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -329,8 +330,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -373,8 +376,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -393,42 +398,45 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		380E569E1C5AA3F0003DF75E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B977130AB826F5B2B4E0FAF3 /* Pods-RealtyShares Admin.debug.xcconfig */;
+			baseConfigurationReference = C82C8AA2A3F3E69C443FFF82 /* Pods-RealtyShares Admin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = "$(SRCROOT)/RealtyShares Admin/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.realtyshares.admin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1705ba5b-3b81-4a88-8e4b-f7602a8300f1";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/RealtyShares Admin/Supporting Files/RSABridgingHeader.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		380E569F1C5AA3F0003DF75E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C6EB091B28ABBFE695630CD /* Pods-RealtyShares Admin.release.xcconfig */;
+			baseConfigurationReference = 0C22E0B49E3E1EC391502D62 /* Pods-RealtyShares Admin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/RealtyShares Admin/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.realtyshares.admin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1705ba5b-3b81-4a88-8e4b-f7602a8300f1";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/RealtyShares Admin/Supporting Files/RSABridgingHeader.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

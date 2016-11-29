@@ -11,7 +11,7 @@ import Alamofire
 import CoreData
 
 enum TableViewSection : Int {
-    case Properties = 0
+    case properties = 0
 }
 
 class RSAMainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -24,14 +24,14 @@ class RSAMainViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         
         // Clear database from old objects.
-        let fetchRequest = NSFetchRequest(entityName: "Property")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Property")
         let predicate = NSPredicate(format: "created == nil")
         fetchRequest.predicate = predicate
         
         do {
-            let results = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Property]
+            let results = try coreDataStack.context.fetch(fetchRequest) as! [Property]
             for property in results {
-                coreDataStack.context.deleteObject(property)
+                coreDataStack.context.delete(property)
                 print("Deleted property: \(property)")
             }
             try coreDataStack.context.save()
@@ -42,45 +42,45 @@ class RSAMainViewController: UIViewController, UITableViewDataSource, UITableVie
     
     // MARK: - UITableViewDataSource & Delegate
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section = TableViewSection(rawValue: section)!
         switch section {
-        case .Properties:
+        case .properties:
             return 1
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("RSABasicTableViewCell")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RSABasicTableViewCell")
         let section = TableViewSection(rawValue: indexPath.section)!
         switch section {
-        case .Properties:
+        case .properties:
             cell?.textLabel?.text = "Properties list"
             break
         }
-        cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell?.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         return cell!
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let section = TableViewSection(rawValue: section)!
         switch section {
-        case .Properties:
+        case .properties:
             return "Properties"
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         let section = TableViewSection(rawValue: indexPath.section)!
         switch section {
-        case .Properties:
-            if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(String(RSAPropertiesViewController.self)) as! RSAPropertiesViewController? {
+        case .properties:
+            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: String(describing: RSAPropertiesViewController.self)) as! RSAPropertiesViewController? {
                 viewController.coreDataStack = coreDataStack
                 self.navigationController?.pushViewController(viewController, animated: true)
             }

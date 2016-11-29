@@ -40,12 +40,12 @@ class RSAAddPropertyViewController: UIViewController, UITextFieldDelegate {
         activityIndicatorView.stopAnimating()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         registerForKeyboardNotifications()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         deregisterForKeyboardNotifications()
     }
@@ -54,11 +54,11 @@ class RSAAddPropertyViewController: UIViewController, UITextFieldDelegate {
         deregisterForKeyboardNotifications()
     }
     
-    private func registerForKeyboardNotifications() {
-        let center = NSNotificationCenter.defaultCenter()
-        center.addObserverForName(UIKeyboardWillShowNotification, object: nil, queue: nil) { (notification) -> Void in
+    fileprivate func registerForKeyboardNotifications() {
+        let center = NotificationCenter.default
+        center.addObserver(forName: NSNotification.Name.UIKeyboardWillShow, object: nil, queue: nil) { (notification) -> Void in
             if let userInfo = notification.userInfo {
-                if let keyboardSizeEnd = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() {
+                if let keyboardSizeEnd = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
                     let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSizeEnd.height, right: 0.0)
                     self.scrollView.contentInset = contentInsets;
                     self.scrollView.scrollIndicatorInsets = contentInsets
@@ -66,22 +66,22 @@ class RSAAddPropertyViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        center.addObserverForName(UIKeyboardWillHideNotification, object: nil, queue: nil) { (notification) -> Void in
-            let contentInsets = UIEdgeInsetsZero
+        center.addObserver(forName: NSNotification.Name.UIKeyboardWillHide, object: nil, queue: nil) { (notification) -> Void in
+            let contentInsets = UIEdgeInsets.zero
             self.scrollView.contentInset = contentInsets
             self.scrollView.scrollIndicatorInsets = contentInsets
         }
     }
     
-    private func deregisterForKeyboardNotifications() {
-        let center = NSNotificationCenter.defaultCenter()
-        center.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        center.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    fileprivate func deregisterForKeyboardNotifications() {
+        let center = NotificationCenter.default
+        center.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        center.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     // MARK: - Actions
     
-    @IBAction func addButtonPressed(sender: UIButton) {
+    @IBAction func addButtonPressed(_ sender: UIButton) {
         let title = titleTextField.text!
         let message = messageTextField.text!
         let url = urlTextField.text!
@@ -90,21 +90,21 @@ class RSAAddPropertyViewController: UIViewController, UITextFieldDelegate {
             RSAAPI.sharedAPI.createPropertyWithTitle(title, message: message, url: url) { (error) -> Void in
                 self.activityIndicatorView.stopAnimating()
                 if (error == nil) {
-                    self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+                    self.navigationController?.dismiss(animated: true, completion: nil)
                 }
             }
         } else {
-            let alertView = UIAlertController(title: "Warning", message: "All text fields must have values", preferredStyle: UIAlertControllerStyle.Alert)
-            alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            navigationController?.presentViewController(alertView, animated: true, completion: nil)
+            let alertView = UIAlertController(title: "Warning", message: "All text fields must have values", preferredStyle: UIAlertControllerStyle.alert)
+            alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            navigationController?.present(alertView, animated: true, completion: nil)
         }
     }
     
-    @IBAction func cancelButtonPressed(sender: UIButton) {
-        navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func viewTappedWithGestureRecognizer(sender: UITapGestureRecognizer) {
+    @IBAction func viewTappedWithGestureRecognizer(_ sender: UITapGestureRecognizer) {
         if (activeTextField != nil) {
             activeTextField.resignFirstResponder()
         }
@@ -112,15 +112,15 @@ class RSAAddPropertyViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - UITextFieldDelegate
     
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         activeTextField = textField
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         activeTextField = nil
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField == titleTextField) {
             messageTextField.becomeFirstResponder()
         } else if (textField == messageTextField) {

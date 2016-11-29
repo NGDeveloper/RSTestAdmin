@@ -14,37 +14,38 @@ class RSAAPI: NSObject {
     let kBaseURL = "https://ethereal-zodiac-121821.appspot.com/";
 //    let kBaseURL = "http://localhost:8888/";
     
-    func getPropertiesListWithCompletion(completion: (properties: Array<AnyObject>?) -> Void) {
-        Alamofire.request(.GET, kBaseURL + "properties")
-        .responseJSON { (response) -> Void in
-//            print(response.request)  // original URL request
-//            print(response.response) // URL response
-//            print(response.data)     // server data
-//            print(response.result)   // result of response serialization
+    func getPropertiesListWithCompletion(_ completion: @escaping (_ properties: Array<AnyObject>?) -> Void) {
+        Alamofire.request(kBaseURL + "properties").responseJSON { (response) in
+            print(response.request!)  // original URL request
+            print(response.response!) // URL response
+            print(response.data!)     // server data
+            print(response.result)   // result of response serialization
             
-            if let JSON = response.result.value {
+            if let JSON = response.result.value as? [String:Any] {
                 print("JSON: \(response.result.value)")
                 let propertiesArray = JSON["properties"] as? Array<AnyObject>
-//                print("array: \(propertiesArray)")
-                completion(properties: propertiesArray)
+                //                print("array: \(propertiesArray)")
+                completion(propertiesArray)
             } else {
-                completion(properties: nil)
+                completion(nil)
             }
-            
-            
         }
     }
     
-    func createPropertyWithTitle(title: String, message: String, url: String, completion: ((error: NSError?) -> Void)?) {
+    func createPropertyWithTitle(_ title: String, message: String, url: String, completion: ((_ error: NSError?) -> Void)?) {
         let params = ["title": title, "message" : message, "url" : url]
         
-        Alamofire.request(.POST, kBaseURL + "properties", parameters: params, encoding: ParameterEncoding.URL, headers: nil)
-        .responseString { (response) -> Void in
+        Alamofire.request(kBaseURL + "properties",
+                          method: .post,
+                          parameters: params,
+                          encoding: URLEncoding.default,
+                          headers: nil)
+            .responseString { (response) in
             print("\(response)")
-            // TODO: Handle server response errors.
-            if ((completion) != nil) {
-                completion!(error: nil)
-            }
+                // TODO: Handle server response errors.
+                if ((completion) != nil) {
+                    completion!(nil)
+                }
         }
     }
 }

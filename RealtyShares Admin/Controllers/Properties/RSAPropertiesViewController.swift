@@ -14,7 +14,7 @@ class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITa
     var refreshControl: UIRefreshControl!
     var properties: [Property]! = []
     var coreDataStack: CoreDataStack!
-    let fetchRequest = NSFetchRequest(entityName: "Property")
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Property")
     let sortDescriptor = NSSortDescriptor(key: "created", ascending: false)
     
     // MARK: - Life Cycle
@@ -26,24 +26,24 @@ class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITa
         let tableViewController = UITableViewController()
         tableViewController.tableView = tableView
         refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(self.refreshPropertiesList), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: #selector(self.refreshPropertiesList), for: UIControlEvents.valueChanged)
         tableViewController.refreshControl = refreshControl
         
         // Configure fetch request.
         fetchRequest.sortDescriptors = [sortDescriptor]
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchPropertiesAndReloadTableView()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // Refresh properties list with refreshing animation.
         refreshControl.beginRefreshing()
-        tableView.setContentOffset(CGPointMake(0, -refreshControl.frame.size.height), animated: true)
+        tableView.setContentOffset(CGPoint(x: 0, y: -refreshControl.frame.size.height), animated: true)
         refreshPropertiesList()
     }
     
@@ -57,18 +57,18 @@ class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITa
             if (properties != nil) {
                 var savedPropertiesCount = 0
                 
-                let entity = NSEntityDescription.entityForName("Property", inManagedObjectContext: self.coreDataStack.context)
+                let entity = NSEntityDescription.entity(forEntityName: "Property", in: self.coreDataStack.context)
                 for propertyDictionary in properties! {
                     if let pid = propertyDictionary["pid"] as? String {
-                        let findFetchRequest = NSFetchRequest(entityName: "Property")
+                        let findFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Property")
                         let predicate = NSPredicate(format: "pid == %@", pid)
                         findFetchRequest.predicate = predicate
                         
                         do {
                             var property: Property
-                            let results = try self.coreDataStack.context.executeFetchRequest(findFetchRequest)
+                            let results = try self.coreDataStack.context.fetch(findFetchRequest)
                             if (results.count == 0) {
-                                property = Property(entity: entity!, insertIntoManagedObjectContext: self.coreDataStack.context)
+                                property = Property(entity: entity!, insertInto: self.coreDataStack.context)
                             } else {
                                 property = results.first as! Property
                             }
@@ -102,9 +102,9 @@ class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
     
-    private func fetchPropertiesAndReloadTableView() {
+    fileprivate func fetchPropertiesAndReloadTableView() {
         do {
-            properties = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Property]
+            properties = try coreDataStack.context.fetch(fetchRequest) as! [Property]
             tableView.reloadData()
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
@@ -113,16 +113,16 @@ class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITa
     
     // MARK: - UITableViewDataSource & Delegate
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return properties.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(String(RSAPropertyTableViewCell.self)) as! RSAPropertyTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RSAPropertyTableViewCell.self)) as! RSAPropertyTableViewCell
         let property = properties[indexPath.row]
         cell.titleLabel.text = property.title
         cell.messageLabel.text = property.message
@@ -130,15 +130,15 @@ class RSAPropertiesViewController: UIViewController, UITableViewDataSource, UITa
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // MARK: - Actions
     
-    @IBAction func addPropertyButtonPressed(sender: UIBarButtonItem) {
-        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(String(RSAAddPropertyViewController.self))
+    @IBAction func addPropertyButtonPressed(_ sender: UIBarButtonItem) {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: String(describing: RSAAddPropertyViewController.self))
         let navigationController = UINavigationController(rootViewController: viewController!)
-        self.navigationController?.presentViewController(navigationController, animated: true, completion: nil)
+        self.navigationController?.present(navigationController, animated: true, completion: nil)
     }
 }
